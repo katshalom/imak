@@ -224,7 +224,7 @@ if (selectedPrayers.length === 0) {
         target.searchParams.set("p", selectedItems
           .map(e => e.getAttribute("data-pid"))
           .join("-"));
-        window.open(target.toString(), "prayerView");
+        window.open(target.toString(), "prayerView", "width=640,height=360", true);
       }
     });
   }, 100);
