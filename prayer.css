@@ -7,6 +7,7 @@ body {
 
 div.setup {
   display: none;
+  user-select: none;
 }
 
 body.setup div.setup {
@@ -31,6 +32,7 @@ ul.list .item {
   transition: transform 0.3s linear, color 0.3s linear;
   box-sizing: border-box;
   color: #ccc;
+  touch-action: none;
 }
 
 ul.list.rigged .item {

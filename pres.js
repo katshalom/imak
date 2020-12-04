@@ -215,12 +215,15 @@ if (selectedPrayers.length === 0) {
     }
     list.classList.add("rigged");
     document.querySelector("div.setup button").addEventListener("click", e => {
-      let target = new URL(location.toString());
-      target.searchParams.set("p", items
-        .filter(e => e.classList.contains("selected"))
-        .map(e => e.getAttribute("data-pid"))
-        .join("-"));
-      window.open(target.toString(), "prayerView");
+      let selectedItems = items
+        .filter(e => e.classList.contains("selected"));
+      if (selectedItems.length > 0) {
+        let target = new URL(location.toString());
+        target.searchParams.set("p", selectedItems
+          .map(e => e.getAttribute("data-pid"))
+          .join("-"));
+        window.open(target.toString(), "prayerView");
+      }
     });
   }, 100);
 } else {
