@@ -92,6 +92,7 @@ Prayer.prototype = {
   },
 
   next(delta) {
+    this.element.classList.add("started");
     if (!isNumber(delta)) delta = 1;
     let newIndex = Math.max(Math.min(this.cardIndex + delta,
       this.cards.length+1), -1);
@@ -107,6 +108,7 @@ Prayer.prototype = {
     this.cards.forEach((e, i) => e.style.opacity = 0);
     this.cardIndex = -1;
     document.title = this.element.getAttribute("data-title");
+    this.element.classList.remove("started");
   },
 
   _cardOpacity(index, opacity) {
